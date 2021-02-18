@@ -1,0 +1,18 @@
+À chaque heure, une suggestion random d'exercice
+    Liste d'exercices:
+        -Push-ups (larges, diamant, largeur des épaules)
+        -Planche
+        -Chaise
+        -Squats (larges, réguliers)
+        -
+
+Possibilité de snoozer par tranches de 15 min, mais chaque snooze augmente la difficulté
+        Donc, pour chaque exercice:
+            Facteur de difficulté instantané
+            Facteur de difficulté global
+
+Niveau global et statistiques
+    Sauvegardé et loadé à chaque utilisation du programme
+
+Module pour ajouter/supprimer des exercices
+    Créer des objets de la classe exercice
