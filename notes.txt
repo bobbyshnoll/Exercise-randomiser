@@ -1,10 +1,12 @@
+Seulement actif lorsque l'ordi est utilisé
+
 À chaque heure, une suggestion random d'exercice
     Liste d'exercices:
         -Push-ups (larges, diamant, largeur des épaules)
         -Planche
         -Chaise
         -Squats (larges, réguliers)
-        -
+        -Redressements assis
 
 Possibilité de snoozer par tranches de 15 min, mais chaque snooze augmente la difficulté
         Donc, pour chaque exercice:
