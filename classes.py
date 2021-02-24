@@ -1,3 +1,5 @@
+import time
+
 class Exercise:
     def __init__(self):
         self.type = ''
@@ -13,9 +15,9 @@ class Exercise:
     def do_exercise(self):
         reps = self.basereps + self.difficultyLevel * self.difficultyFactor
         if self.type.lower() == 'reps':
-            return f'Do {reps} reps of {self.name.lower()}'
+            return f'Do {reps} reps of {self.name.lower()}.'
         elif self.type.lower() == 'timed':
-            return f'Do {reps} seconds of {self.name.lower()}'
+            return f'Do {reps} seconds of {self.name.lower()}.'
         elif self.type.lower() == 'special':
             return f'{self.description}'
 
@@ -47,3 +49,13 @@ def new_ex():
 
     newEx.description = str(input('Describe the exercise:\n'))
     return newEx
+
+def countdown(duration):
+        t = duration
+        while t:
+            mins = t // 60
+            secs = t % 60
+            print(f'{mins:02}:{secs:02} remaining.', end='\r')
+            time.sleep(1)
+            t -= 1
+        print("\nTime's up!")

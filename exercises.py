@@ -56,6 +56,7 @@ while running:
 
     else:
         print('Unrecognized command, try again.')
+        time.sleep(2)
 
 
 with open('exercise_list.txt', 'wb') as f:
