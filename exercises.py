@@ -1,4 +1,4 @@
-""" 
+"""
 Run this module to add or delete exercises in the exercise_list.txt file.
 """
 
@@ -17,21 +17,24 @@ while running:
     print('\nAvailable exercises:\n')
     for i in exerciseDict.keys():
         print(exerciseDict[i], '\n')
-    
+
     time.sleep(2)
 
-    action = input('\nWhat do you want to do?\nTo add a new exercise, type "add"\nTo delete an exercise, type "del"\nTo quit the exercise creator, type "q"\n')
+    action = input('\nWhat do you want to do?\n'
+                   'To add a new exercise, type "add"\n'
+                   'To delete an exercise, type "del"\n'
+                   'To quit the exercise creator, type "q"\n')
     if action.lower() == 'add':
         newex = new_ex()
         exerciseDict[newex.name] = newex
 
     elif action.lower() == 'del':
         complete = False
-        
+
         while not complete:
             print('\nHere is your exercise list:')
             for i in exerciseDict.keys():
-                print(exerciseDict[i].name, end = " | ")
+                print(exerciseDict[i].name, end=" | ")
             toDel = input('\nWhich exercise do you want to delete?\n')
             if toDel not in exerciseDict.keys():
                 print('Unrecognized exercise, try again.\n')

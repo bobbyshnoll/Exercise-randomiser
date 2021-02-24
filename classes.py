@@ -1,5 +1,6 @@
 import time
 
+
 class Exercise:
     def __init__(self):
         self.type = ''
@@ -10,8 +11,11 @@ class Exercise:
         self.difficultyFactor = 0
 
     def __str__(self):
-        return f'{self.name}\nType: {self.type}\nExercise: {self.name}\n{self.description}'
-    
+        return (f'{self.name}\n'
+                f'Type: {self.type}\n'
+                f'Exercise: {self.name}\n'
+                f'{self.description}')
+
     def do_exercise(self):
         reps = self.basereps + self.difficultyLevel * self.difficultyFactor
         if self.type.lower() == 'reps':
@@ -24,21 +28,28 @@ class Exercise:
     def add_difficulty(self):
         self.difficultyLevel += 1
 
+
 def new_ex():
     newEx = Exercise()
     newEx.name = str(input('Exercise name:\n'))
     newEx.type = str(input('Exercise type (reps or timed):\n'))
-    
+
     ok = False
     while not ok:
         if newEx.type.lower() == 'reps':
             ok = True
             newEx.basereps = int(input('How many reps for beginners:\n'))
-            newEx.difficultyFactor = int(input('How many reps should be added for every difficuly level increase?\n'))
+            newEx.difficultyFactor = \
+                int(input('How many reps should be added '
+                          'for every difficuly level increase?\n'))
         elif newEx.type.lower() == 'timed':
             ok = True
-            newEx.basereps = int(input('How long for beginners (in seconds):\n'))
-            newEx.difficultyFactor = int(input('How much time should be added for every difficuly level increase (in seconds)?\n'))
+            newEx.basereps = \
+                int(input('How long for beginners (in seconds):\n'))
+            newEx.difficultyFactor = \
+                int(input('How much time should be added '
+                          'for every difficuly level increase '
+                          '(in seconds)?\n'))
         elif newEx.type.lower() == 'special':
             ok = True
             newEx.basereps = int(input('How many?\n'))
@@ -49,6 +60,7 @@ def new_ex():
 
     newEx.description = str(input('Describe the exercise:\n'))
     return newEx
+
 
 def countdown(duration):
         t = duration
