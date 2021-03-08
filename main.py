@@ -1,6 +1,7 @@
 import random
 import pickle
 import time
+from playsound import playsound
 
 from classes import Exercise, countdown
 
@@ -15,16 +16,18 @@ running = True
 while running:
     print()
     print(currentExercise.do_exercise(), '\n')
+    playsound('sounds\chime.wav')
     time.sleep(1)
     action = input('Press enter to snooze for 15 mins.\n'
                    'Type "h" for help with the exercise.\n'
                    'Type "ok" if you did the exercise.\n').lower()
 
     if action == '' and snoozeNb < 3:
+        playsound('sounds\ok.wav')
         snoozeNb += 1
         print(f'Snooze {snoozeNb}/3.')
         currentExercise.difficultyLevel += 1
-        countdown(2)
+        countdown(900)
 
     elif action == '' and snoozeNb == 3:
         print('No more snoozing! Do the exercise now!')
@@ -39,5 +42,6 @@ while running:
 
     else:
         print('Good job!')
+        playsound('sounds\ok.wav')
         time.sleep(2)
         running = False
